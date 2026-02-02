@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👟 КРОСІВКИ ПО БРЕНДАХ - L-TEX</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px 10px;
+            line-height: 1.4;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+        
+        .header .info {
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
+        
+        .header .company {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .brand-section {
+            margin-bottom: 25px;
+        }
+        
+        .brand-header {
+            background: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .brand-name {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #764ba2;
+        }
+        
+        .brand-count {
+            background: #764ba2;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        
+        .code-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f0f0f0;
+            color: #764ba2;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+        
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4444;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .article {
+            color: #764ba2;
+            font-weight: 700;
+            font-size: 1em;
+            margin-top: 35px;
+            margin-bottom: 6px;
+        }
+        
+        .name {
+            color: #333;
+            font-size: 0.8em;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .price-section {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .price-section.sale {
+            background: #fff5f5;
+            border: 2px solid #ff4444;
+        }
+        
+        .price {
+            color: #764ba2;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+        
+        .old-price {
+            color: #999;
+            font-size: 0.95em;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+        
+        .sale-price {
+            color: #ff4444;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .price-label {
+            color: #666;
+            font-size: 0.7em;
+            margin-top: 2px;
+        }
+        
+        .youtube-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #FF0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-btn:hover {
+            background: #CC0000;
+            transform: scale(1.02);
+        }
+        
+        .youtube-btn:before {
+            content: "▶ ";
+        }
+        
+        .footer {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-top: 25px;
+        }
+        
+        .footer-text {
+            color: #666;
+            font-size: 0.8em;
+            margin-bottom: 8px;
+        }
+        
+        .contact {
+            color: #764ba2;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>👟 КРОСІВКИ ПО БРЕНДАХ</h1>
+        <div class="info">20 позицій | 3.5 - 45 €/шт | 11 брендів</div>
+        <div class="company">L-TEX | Луцьк, Україна 🇺🇦</div>
+    </div>
+    
+    <!-- HOKA -->
+    <div class="brand-section">
+        <div class="brand-header">
+            <div class="brand-name">🏃 HOKA</div>
+            <div class="brand-count">5 позицій</div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">1</div>
+                <div class="code-badge">1293</div>
+                <div class="article">HOKA A</div>
+                <div class="name">Кросівки мікс нові демісезон сток HOKA (нові)</div>
+                <div class="price-section">
+                    <div class="price">41 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHyWUUWbWr0nJiC0c5FoCcQ" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">2</div>
+                <div class="code-badge">1321</div>
+                <div class="article">HOKA B</div>
+                <div class="name">Кросівки мікс нові демісезон сток HOKA (примірка, нові, легке б/в)</div>
+                <div class="price-section">
+                    <div class="price">32 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFN5OLOK_v77LHyslYIVqpL" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">3</div>
+                <div class="code-badge">1347</div>
+                <div class="article">HOKA C</div>
+                <div class="name">Кросівки мікс нові демісезон HOKA (б/в)</div>
+                <div class="price-section">
+                    <div class="price">23 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHdwWqT9CQwOCNqjVmZTGTm" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">4</div>
+                <div class="code-badge">1386</div>
+                <div class="article">HOKA C-</div>
+                <div class="name">Кросівки мікс нові демісезон сток HOKA (б/в + ремонт)</div>
+                <div class="price-section">
+                    <div class="price">10.5 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGxL3vMPnZcqL8w7w5wJXgv" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">5</div>
+                <div class="code-badge">1731</div>
+                <div class="article">HOKA D</div>
+                <div class="name">Кросівки мікс нові демісезон сток HOKA (б/в + ремонт задніка, ремонт верх)</div>
+                <div class="price-section">
+                    <div class="price">3.5 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFznMVpjZMRGBQ_ZL_Gz3LE" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Adidas -->
+    <div class="brand-section">
+        <div class="brand-header">
+            <div class="brand-name">⚡ Adidas</div>
+            <div class="brand-count">3 позиції</div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">6</div>
+                <div class="code-badge">1103</div>
+                <div class="article">ADIDAS I</div>
+                <div class="name">Кросівки мікс демісезон Adidas, Reebok I Сток</div>
+                <div class="price-section">
+                    <div class="price">37 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGrFyIjMQqCYH1Fc06-VIzE" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">7</div>
+                <div class="code-badge">1836</div>
+                <div class="article">SP-M Mix</div>
+                <div class="name">Кросівки мікс демісезон Adidas, Gazelle, Campus Сток</div>
+                <div class="price-section">
+                    <div class="price">32 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEQZ1pd95w9mOTFpjmUNYYS" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">8</div>
+                <div class="code-badge">0420</div>
+                <div class="article">ADIDAS II</div>
+                <div class="name">Кросівки мікс демісезон Adidas, Reebok II Сток</div>
+                <div class="price-section">
+                    <div class="price">31 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pF1s8q7Z16aAivfDXwPf0_j" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- New Balance -->
+    <div class="brand-section">
+        <div class="brand-header">
+            <div class="brand-name">🔵 New Balance</div>
+            <div class="brand-count">2 позиції</div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">9</div>
+                <div class="code-badge">1655</div>
+                <div class="article">NEW BALANCE A</div>
+                <div class="name">Кросівки чоловічі та жіночі нові сток New Balance</div>
+                <div class="price-section">
+                    <div class="price">45 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGARZwb87BUWHpJOIqIvbJ3" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">10</div>
+                <div class="code-badge">1839</div>
+                <div class="article">New Balance B</div>
+                <div class="name">Кросівки чоловічі + жіночі New Balance B (примірка, повернення від клієнтів, нові)</div>
+                <div class="price-section">
+                    <div class="price">34 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pERocBGQbf9Agdaqg_ccjTE" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Nike -->
+    <div class="brand-section">
+        <div class="brand-header">
+            <div class="brand-name">✔️ Nike</div>
+            <div class="brand-count">2 позиції</div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">11</div>
+                <div class="code-badge">1594</div>
+                <div class="article">NIKE B</div>
+                <div class="name">Кросівки чоловічі та жіночі Nike сток (нове, примірка, мінімальний знос)</div>
+                <div class="price-section">
+                    <div class="price">28 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEuvBOSbA8dK1MiNpjnGFq5" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">12</div>
+                <div class="code-badge">1874</div>
+                <div class="article">SPH-Mix С</div>
+                <div class="name">Кросівки мультибренд Adidas, Nike, NB, Puma, Lacoste (нові, мін.дефект, повернення, мін.б/в)</div>
+                <div class="price-section">
+                    <div class="price">24 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGRJ7XbVD7EXlxDLye7VKA-" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ralph Lauren -->
+    <div class="brand-section">
+        <div class="brand-header">
+            <div class="brand-name">🐴 Ralph Lauren</div>
+            <div class="brand-count">2 позиції</div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">13</div>
+                <div class="code-badge">1645</div>
+                <div class="article">POLO Ralph Lauren</div>
+                <div class="name">Кросівки чоловічі POLO Ralph Lauren сток</div>
+                <div class="price-section">
+                    <div class="price">25 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEIrewNLi1s-Tt4h2_IfxLY" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">14</div>
+                <div class="code-badge">1646</div>
+                <div class="article">RL COURT 3001</div>
+                <div class="name">Кросівки чоловічі Ralph Lauren COURT 3001 сток ростовка</div>
+                <div class="price-section">
+                    <div class="price">25 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGKE8flGF3p8OMxBW3w82-x" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reebok -->
+    <div class="brand-section">
+        <div class="brand-header">
+            <div class="brand-name">🔺 Reebok</div>
+            <div class="brand-count">1 позиція</div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">15</div>
+                <div class="code-badge">1159</div>
+                <div class="article">Reebok</div>
+                <div class="name">Кросівки мікс демісезон Reebok Сток</div>
+                <div class="price-section">
+                    <div class="price">25 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGnFDwVPmHEev0ePlaGhcoY" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Інші бренди -->
+    <div class="brand-section">
+        <div class="brand-header">
+            <div class="brand-name">🌟 Інші бренди</div>
+            <div class="brand-count">5 позицій</div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-number">16</div>
+                <div class="code-badge">1346</div>
+                <div class="article">GUESS</div>
+                <div class="name">Кросівки, сліпони базові чоловічі/жіночі демісезон сток GUESS</div>
+                <div class="price-section">
+                    <div class="price">24 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGbNYf_woP1CLCwPumtk0l1" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">17</div>
+                <div class="code-badge">1443</div>
+                <div class="article">Goliath</div>
+                <div class="name">Кросівки, кеди, сліпони чоловічі Goliath сток</div>
+                <div class="price-section">
+                    <div class="price">20 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pE9JHKubTcVHtD54fDxRiUx" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">18</div>
+                <div class="code-badge">1411</div>
+                <div class="article">Propet A</div>
+                <div class="name">Кросівки мікс літо+демісезон Propet сток США</div>
+                <div class="price-section">
+                    <div class="price">19.5 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGMW_qrZL75f3TGJrGTUVYj" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">19</div>
+                <div class="code-badge">1548</div>
+                <div class="article">TEVA B</div>
+                <div class="name">Кросівки, взуття мікс чоловічі, жіночі демісезон сток TEVA (примірка, нові, мін. дефект)</div>
+                <div class="price-section">
+                    <div class="price">19 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHp3jY4Kuc0_VOSxzHl7Dde" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-number">20</div>
+                <div class="code-badge">1489</div>
+                <div class="article">KANE</div>
+                <div class="name">Кросівки чоловічі та жіночі KANE сток</div>
+                <div class="price-section">
+                    <div class="price">14.5 €/шт</div>
+                    <div class="price-label">Ціна продажу</div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pERpEKy1jnnWsLdOMLhEObE" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-text">📱 Для замовлення звертайтесь</div>
+        <div class="contact">L-TEX | Луцьк, Україна</div>
+        <div class="footer-text" style="margin-top: 8px; font-size: 0.7em;">Актуально на 02.02.2026</div>
+    </div>
+</body>
+</html>
