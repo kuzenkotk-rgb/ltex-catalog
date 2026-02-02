@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👞 ВЗУТТЯ МІХ СТОК - L-TEX</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 15px 10px;
+            line-height: 1.4;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #f5576c;
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+        
+        .header .info {
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
+        
+        .header .company {
+            color: #f5576c;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .sale-banner {
+            background: linear-gradient(135deg, #ff4444 0%, #ff6b6b 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255,68,68,0.3);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .card.sale {
+            border: 2px solid #ff4444;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        
+        .code-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f0f0f0;
+            color: #f5576c;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+        
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 45px;
+            background: #ff4444;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.65em;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .article {
+            color: #f5576c;
+            font-weight: 700;
+            font-size: 1em;
+            margin-top: 35px;
+            margin-bottom: 6px;
+        }
+        
+        .name {
+            color: #333;
+            font-size: 0.8em;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .price-section {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .price-section.sale {
+            background: #fff5f5;
+            border: 2px solid #ff4444;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-info {
+            flex: 1;
+        }
+        
+        .price {
+            color: #f5576c;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+        
+        .old-price {
+            color: #999;
+            font-size: 0.95em;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+        
+        .sale-price {
+            color: #ff4444;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .price-label {
+            color: #666;
+            font-size: 0.7em;
+            margin-top: 2px;
+        }
+        
+        .order-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            background: #7360F2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.75em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .order-btn:hover {
+            background: #5C4BC4;
+            transform: scale(1.05);
+        }
+        
+        .order-btn:before {
+            content: "📱 ";
+        }
+        
+        .youtube-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #FF0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-btn:hover {
+            background: #CC0000;
+            transform: scale(1.02);
+        }
+        
+        .youtube-btn:before {
+            content: "▶ ";
+        }
+        
+        .footer {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .footer-text {
+            color: #666;
+            font-size: 0.8em;
+            margin-bottom: 8px;
+        }
+        
+        .contact {
+            color: #f5576c;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.3em;
+            }
+            
+            .price-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .order-btn {
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>👞 ВЗУТТЯ МІХ СТОК</h1>
+        <div class="info">90 позицій | 2 - 55 €/кг | Загалом 17.4 тонн</div>
+        <div class="company">L-TEX | Луцьк, Україна 🇺🇦</div>
+    </div>
+    
+    <div class="sale-banner">
+        🔥 11 ПОЗИЦІЙ З АКЦІЙНИМИ ЦІНАМИ! 🔥
+    </div>
+    
+    <div class="grid">
+        <div class="card sale">
+            <div class="card-number">1</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1609</div>
+            <div class="article">London Fog</div>
+            <div class="name">Чоловічі черевики London Fog сток на мембрані утеплені Thinsulate</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">18.5 €/кг</div>
+                        <div class="sale-price">17.5 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ALondon%20Fog%20%28%D0%BA%D0%BE%D0%B4%201609%29%0A%D0%A7%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%D1%87%D0%B5%D1%80%D0%B5%D0%B2%D0%B8%D0%BA%D0%B8%20London%20Fog%20%D1%81%D1%82%D0%BE%D0%BA%20%D0%BD%D0%B0%20%D0%BC%D0%B5%D0%BC%D0%B1%D1%80%D0%B0%D0%BD%D1%96%20%D1%83%D1%82%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D1%96%20Thinsulate%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGMuUWPnn-IVb5GFTbQqYeA" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">2</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1595</div>
+            <div class="article">SHOES CREAM W</div>
+            <div class="name">Взуття мікс чоловіче, жіноче ,дитяче ,зима Крем</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">14.5 €/кг</div>
+                        <div class="sale-price">13.9 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHOES%20CREAM%20W%20%28%D0%BA%D0%BE%D0%B4%201595%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B5%2C%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%20%2C%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%2C%D0%B7%D0%B8%D0%BC%D0%B0%20%D0%9A%D1%80%D0%B5%D0%BC%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEdaWUJ5I3tRb4EpMl8f0ld" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">3</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1295</div>
+            <div class="article">MUK LUKS SOCKS/SLIPPERS</div>
+            <div class="name">Шкарпетки - тапочки мікс демісезон сток MUK LUKS</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">14.5 €/кг</div>
+                        <div class="sale-price">13.5 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AMUK%20LUKS%20SOCKS/SLIPPERS%20%28%D0%BA%D0%BE%D0%B4%201295%29%0A%D0%A8%D0%BA%D0%B0%D1%80%D0%BF%D0%B5%D1%82%D0%BA%D0%B8%20-%20%D1%82%D0%B0%D0%BF%D0%BE%D1%87%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D1%81%D1%82%D0%BE%D0%BA%20MUK%20LUKS%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGyXDWKG3HRHSvs8eJwf1Ij" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">4</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1322</div>
+            <div class="article">House slippers Ardene</div>
+            <div class="name">Тапочки домашні сток Ardene, MuksLuks,Bamboo</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">12.5 €/кг</div>
+                        <div class="sale-price">11.5 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHouse%20slippers%20Ardene%20%28%D0%BA%D0%BE%D0%B4%201322%29%0A%D0%A2%D0%B0%D0%BF%D0%BE%D1%87%D0%BA%D0%B8%20%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D1%96%20%D1%81%D1%82%D0%BE%D0%BA%20Ardene%2C%20MuksLuks%2CBamboo%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGpFyZ-ud59QfMkYyMWjwAL" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">5</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1291</div>
+            <div class="article">House Slippers Isotoner</div>
+            <div class="name">Тапочки нові Isotoner сток демісезон</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">12.5 €/кг</div>
+                        <div class="sale-price">11.5 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHouse%20Slippers%20Isotoner%20%28%D0%BA%D0%BE%D0%B4%201291%29%0A%D0%A2%D0%B0%D0%BF%D0%BE%D1%87%D0%BA%D0%B8%20%D0%BD%D0%BE%D0%B2%D1%96%20Isotoner%20%D1%81%D1%82%D0%BE%D0%BA%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pF3Iik5ZgvPcEM43NIq412q" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">6</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">0677</div>
+            <div class="article">L.mix Slippers</div>
+            <div class="name">Кімнатні тапочки мікс демісезон Esmara,Crivit,Livergy,Lupilu Сток</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">11.5 €/кг</div>
+                        <div class="sale-price">10.9 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.mix%20Slippers%20%28%D0%BA%D0%BE%D0%B4%200677%29%0A%D0%9A%D1%96%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%96%20%D1%82%D0%B0%D0%BF%D0%BE%D1%87%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Esmara%2CCrivit%2CLivergy%2CLupilu%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGruv04UrBUGQkrVmvPI3QY" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">7</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1763</div>
+            <div class="article">L.MIX SHOES WINTER</div>
+            <div class="name">Взуття мікс зима  Esmara, Livergy Сток</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">9.5 €/кг</div>
+                        <div class="sale-price">9 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.MIX%20SHOES%20WINTER%20%28%D0%BA%D0%BE%D0%B4%201763%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%20%20Esmara%2C%20Livergy%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHjz_MQGjKIFeqTJM_VbIAV" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">8</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1473</div>
+            <div class="article">PARKSIDE WORK SHOES</div>
+            <div class="name">Взуття робоче чоловіче PARKSIDE сток</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">9.5 €/кг</div>
+                        <div class="sale-price">9 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0APARKSIDE%20WORK%20SHOES%20%28%D0%BA%D0%BE%D0%B4%201473%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B5%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B5%20PARKSIDE%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pH8ARDDwZrMuf0FUpFErzZP" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">9</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1798</div>
+            <div class="article">SHOES MIX (CR)</div>
+            <div class="name">Взуття мікс зима+демісезон 1й сорт + Екстра, Англія (CR)</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">7.5 €/кг</div>
+                        <div class="sale-price">6.9 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHOES%20MIX%20%28CR%29%20%28%D0%BA%D0%BE%D0%B4%201798%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%2B%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%20%2B%20%D0%95%D0%BA%D1%81%D1%82%D1%80%D0%B0%2C%20%D0%90%D0%BD%D0%B3%D0%BB%D1%96%D1%8F%20%28CR%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHXsjLCnCTeJ7We0BYUWwOP" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">10</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">0036</div>
+            <div class="article">13064</div>
+            <div class="name">Взуття (угги, сибірійки) мікс зима 1й сорт</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">5.7 €/кг</div>
+                        <div class="sale-price">5.2 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A13064%20%28%D0%BA%D0%BE%D0%B4%200036%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%28%D1%83%D0%B3%D0%B3%D0%B8%2C%20%D1%81%D0%B8%D0%B1%D1%96%D1%80%D1%96%D0%B9%D0%BA%D0%B8%29%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pE9SYEO_t-MchYuT56HHFAf" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card sale">
+            <div class="card-number">11</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1678</div>
+            <div class="article">SHOES MIX ORL</div>
+            <div class="name">Взуття мікс демісезон</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">3.5 €/кг</div>
+                        <div class="sale-price">3.2 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHOES%20MIX%20ORL%20%28%D0%BA%D0%BE%D0%B4%201678%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">12</div>
+            <div class="code-badge">1849</div>
+            <div class="article">Hoka ANACAPA</div>
+            <div class="name">Кросівки, черевики Hoka ANACAPA, зима сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">55 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHoka%20ANACAPA%20%28%D0%BA%D0%BE%D0%B4%201849%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%2C%20%D1%87%D0%B5%D1%80%D0%B5%D0%B2%D0%B8%D0%BA%D0%B8%20Hoka%20ANACAPA%2C%20%D0%B7%D0%B8%D0%BC%D0%B0%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pF8_9Pk6lOkIrNXcSpbk_5M" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">13</div>
+            <div class="code-badge">1847</div>
+            <div class="article">LOWA W</div>
+            <div class="name">Кросівки GoreTex + трекінг мікс зима Lowa  сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">55 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ALOWA%20W%20%28%D0%BA%D0%BE%D0%B4%201847%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20GoreTex%20%2B%20%D1%82%D1%80%D0%B5%D0%BA%D1%96%D0%BD%D0%B3%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%20Lowa%20%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEGObe8DEZjvzNoSu3VzHR6" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">14</div>
+            <div class="code-badge">1844</div>
+            <div class="article">SPH-Mix Lux W</div>
+            <div class="name">Кросівки GoreTex + трекінг мікс зима Merrell,Puma,Adidas,Teva,Timberland сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">52 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASPH-Mix%20Lux%20W%20%28%D0%BA%D0%BE%D0%B4%201844%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20GoreTex%20%2B%20%D1%82%D1%80%D0%B5%D0%BA%D1%96%D0%BD%D0%B3%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%20Merrell%2CPuma%2CAdidas%2CTeva%2CTimberland%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEACkC4r9s7zDt527gnxphj" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">15</div>
+            <div class="code-badge">1805</div>
+            <div class="article">Adidas Terrex</div>
+            <div class="name">Кросівки, черевики чоловічі та жіночі AdidasTerrex Goretex Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">47 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AAdidas%20Terrex%20%28%D0%BA%D0%BE%D0%B4%201805%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%2C%20%D1%87%D0%B5%D1%80%D0%B5%D0%B2%D0%B8%D0%BA%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%D1%82%D0%B0%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20AdidasTerrex%20Goretex%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEB7RFtnSchEDnEPcgr3ZA8" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">16</div>
+            <div class="code-badge">1602</div>
+            <div class="article">LOWA</div>
+            <div class="name">Кросівки чоловічі та жіночі LOWA сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">46 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ALOWA%20%28%D0%BA%D0%BE%D0%B4%201602%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%D1%82%D0%B0%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20LOWA%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pG0FeZsaZYpr54G_qRvyEhA" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">17</div>
+            <div class="code-badge">1655</div>
+            <div class="article">NEW BALANCE A</div>
+            <div class="name">Кросівки чоловічі та жіночі нові сток New Balance</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">45 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ANEW%20BALANCE%20A%20%28%D0%BA%D0%BE%D0%B4%201655%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%D1%82%D0%B0%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20%D0%BD%D0%BE%D0%B2%D1%96%20%D1%81%D1%82%D0%BE%D0%BA%20New%20Balance%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFW0Py1jIff1kc__wbQluO9" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">18</div>
+            <div class="code-badge">1293</div>
+            <div class="article">HOKA A</div>
+            <div class="name">Кросівки мікс нові демісезон сток HOKA (нові)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">41 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHOKA%20A%20%28%D0%BA%D0%BE%D0%B4%201293%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BD%D0%BE%D0%B2%D1%96%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D1%81%D1%82%D0%BE%D0%BA%20HOKA%20%28%D0%BD%D0%BE%D0%B2%D1%96%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHjomZTk39qWkRU6R3emxZx" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">19</div>
+            <div class="code-badge">1103</div>
+            <div class="article">ADIDAS I</div>
+            <div class="name">Кросівки мікс демісезон Adidas, Reebok I Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">37 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AADIDAS%20I%20%28%D0%BA%D0%BE%D0%B4%201103%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Adidas%2C%20Reebok%20I%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGui8oRAeDc7j_yIjqLUbfy" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">20</div>
+            <div class="code-badge">1694</div>
+            <div class="article">ECCO S</div>
+            <div class="name">Взуття мікс доросле літо сток ECCO</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">36 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AECCO%20S%20%28%D0%BA%D0%BE%D0%B4%201694%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BB%D1%96%D1%82%D0%BE%20%D1%81%D1%82%D0%BE%D0%BA%20ECCO%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHfarYxg1l6JNIJHQUfTcHY" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">21</div>
+            <div class="code-badge">1642</div>
+            <div class="article">Adidas SW Orketro + Youth</div>
+            <div class="name">Кросівки мікс Adidas SW Orketro + Youth of Paris сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">35 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AAdidas%20SW%20Orketro%20%2B%20Youth%20%28%D0%BA%D0%BE%D0%B4%201642%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20Adidas%20SW%20Orketro%20%2B%20Youth%20of%20Paris%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGTL2Dn9Kt25LY1UIshoMZo" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">22</div>
+            <div class="code-badge">1640</div>
+            <div class="article">NIKE Kyrie 8 Eagle</div>
+            <div class="name">Кросівки NIKE Kyrie 8 Eagle сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">35 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ANIKE%20Kyrie%208%20Eagle%20%28%D0%BA%D0%BE%D0%B4%201640%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20NIKE%20Kyrie%208%20Eagle%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pH-Hxw7xhCH2GGTxf46wNXe" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">23</div>
+            <div class="code-badge">1839</div>
+            <div class="article">New Balance B</div>
+            <div class="name">Кросівки чоловічі + жіночі New Balance B (примірка, поаернення від клієнтів, нові)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">34 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ANew%20Balance%20B%20%28%D0%BA%D0%BE%D0%B4%201839%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%2B%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20New%20Balance%20B%20%28%D0%BF%D1%80%D0%B8%D0%BC%D1%96%D1%80%D0%BA%D0%B0%2C%20%D0%BF%D0%BE%D0%B0%D0%B5%D1%80%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F%20%D0%B2%D1%96%D0%B4%20%D0%BA%D0%BB%D1%96%D1%94%D0%BD%D1%82%D1%96%D0%B2%2C%20%D0%BD%D0%BE%D0%B2%D1%96%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pERocBGQbf9Agdaqg_ccjTE" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">24</div>
+            <div class="code-badge">1327</div>
+            <div class="article">ADIDAS I**</div>
+            <div class="name">Кросівки мікс демісезон Adidas, Reebok I Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">33 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AADIDAS%20I%2A%2A%20%28%D0%BA%D0%BE%D0%B4%201327%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Adidas%2C%20Reebok%20I%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFucKEbRaiT9mhgvMH3TnuQ" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">25</div>
+            <div class="code-badge">1321</div>
+            <div class="article">HOKA B</div>
+            <div class="name">Кросівки мікс нові демісезон сток HOKA (примірка, нові, легке б/у)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">32 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHOKA%20B%20%28%D0%BA%D0%BE%D0%B4%201321%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BD%D0%BE%D0%B2%D1%96%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D1%81%D1%82%D0%BE%D0%BA%20HOKA%20%28%D0%BF%D1%80%D0%B8%D0%BC%D1%96%D1%80%D0%BA%D0%B0%2C%20%D0%BD%D0%BE%D0%B2%D1%96%2C%20%D0%BB%D0%B5%D0%B3%D0%BA%D0%B5%20%D0%B1/%D1%83%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pE4EIRPYkhlgtTQ9J_WD6oS" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">26</div>
+            <div class="code-badge">1836</div>
+            <div class="article">SP-M Mix</div>
+            <div class="name">Кросівки мікс демісезон Adidas, Gazelle, Campus Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">32 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASP-M%20Mix%20%28%D0%BA%D0%BE%D0%B4%201836%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Adidas%2C%20Gazelle%2C%20Campus%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEQZ1pd95w9mOTFpjmUNYYS" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">27</div>
+            <div class="code-badge">0420</div>
+            <div class="article">ADIDAS II</div>
+            <div class="name">Кросівки мікс демісезон Adidas, Reebok II Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">31 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AADIDAS%20II%20%28%D0%BA%D0%BE%D0%B4%200420%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Adidas%2C%20Reebok%20II%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pE4ah881zVMUCpOwIu26Kym" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">28</div>
+            <div class="code-badge">1594</div>
+            <div class="article">NIKE B</div>
+            <div class="name">Кросівки чоловічі та жіночі Nike сток (нове, примірка, мінімальний знос)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">28 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ANIKE%20B%20%28%D0%BA%D0%BE%D0%B4%201594%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%D1%82%D0%B0%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20Nike%20%D1%81%D1%82%D0%BE%D0%BA%20%28%D0%BD%D0%BE%D0%B2%D0%B5%2C%20%D0%BF%D1%80%D0%B8%D0%BC%D1%96%D1%80%D0%BA%D0%B0%2C%20%D0%BC%D1%96%D0%BD%D1%96%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9%20%D0%B7%D0%BD%D0%BE%D1%81%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFBisSXJ6h-EMWR17diLjMl" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">29</div>
+            <div class="code-badge">1645</div>
+            <div class="article">POLO Ralph Lauren</div>
+            <div class="name">Кросівки чоловічі POLO Ralph Lauren сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">25 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0APOLO%20Ralph%20Lauren%20%28%D0%BA%D0%BE%D0%B4%201645%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20POLO%20Ralph%20Lauren%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEIrewNLi1s-Tt4h2_IfxLY" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">30</div>
+            <div class="code-badge">1159</div>
+            <div class="article">Reebok</div>
+            <div class="name">Кросівки мікс демісезон Reebok Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">25 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AReebok%20%28%D0%BA%D0%BE%D0%B4%201159%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Reebok%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGnFDwVPmHEev0ePlaGhcoY" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">31</div>
+            <div class="code-badge">1646</div>
+            <div class="article">RL  COURT 3001</div>
+            <div class="name">Кросівки чоловічі Ralph Lauren COURT 3001 сток ростовка</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">25 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ARL%20%20COURT%203001%20%28%D0%BA%D0%BE%D0%B4%201646%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20Ralph%20Lauren%20COURT%203001%20%D1%81%D1%82%D0%BE%D0%BA%20%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D0%BA%D0%B0%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGKE8flGF3p8OMxBW3w82-x" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">32</div>
+            <div class="code-badge">1410</div>
+            <div class="article">SHMs</div>
+            <div class="name">Взуття мікс сток Gordon Bros. Digel літо</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">25 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHMs%20%28%D0%BA%D0%BE%D0%B4%201410%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D1%81%D1%82%D0%BE%D0%BA%20Gordon%20Bros.%20Digel%20%D0%BB%D1%96%D1%82%D0%BE%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pETOxIbM_ckmAtBFZ0vioj8" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">33</div>
+            <div class="code-badge">1412</div>
+            <div class="article">SHMw</div>
+            <div class="name">Взуття мікс сток Gordon Bros. Digel зима</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">25 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHMw%20%28%D0%BA%D0%BE%D0%B4%201412%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D1%81%D1%82%D0%BE%D0%BA%20Gordon%20Bros.%20Digel%20%D0%B7%D0%B8%D0%BC%D0%B0%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pG1BtWUpwAPIKtEZSPb_1gv" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">34</div>
+            <div class="code-badge">1346</div>
+            <div class="article">GUESS</div>
+            <div class="name">Кросівки, сліпони базові чоловічі/жіночі демісезон сток GUESS</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">24 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AGUESS%20%28%D0%BA%D0%BE%D0%B4%201346%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%2C%20%D1%81%D0%BB%D1%96%D0%BF%D0%BE%D0%BD%D0%B8%20%D0%B1%D0%B0%D0%B7%D0%BE%D0%B2%D1%96%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96/%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D1%81%D1%82%D0%BE%D0%BA%20GUESS%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGbNYf_woP1CLCwPumtk0l1" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">35</div>
+            <div class="code-badge">1874</div>
+            <div class="article">SPH-Mix С</div>
+            <div class="name">Кросівки мультибренд Addias,Nike,NB,Puma,Lacoste (нові,мін.дефект,повернення,мін.б/в)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">24 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASPH-Mix%20%D0%A1%20%28%D0%BA%D0%BE%D0%B4%201874%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D0%B1%D1%80%D0%B5%D0%BD%D0%B4%20Addias%2CNike%2CNB%2CPuma%2CLacoste%20%28%D0%BD%D0%BE%D0%B2%D1%96%2C%D0%BC%D1%96%D0%BD.%D0%B4%D0%B5%D1%84%D0%B5%D0%BA%D1%82%2C%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F%2C%D0%BC%D1%96%D0%BD.%D0%B1/%D0%B2%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGRJ7XbVD7EXlxDLye7VKA-" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">36</div>
+            <div class="code-badge">1347</div>
+            <div class="article">HOKA C</div>
+            <div class="name">Кросівки мікс нові демісезон HOKA (б/у)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">23 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHOKA%20C%20%28%D0%BA%D0%BE%D0%B4%201347%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BD%D0%BE%D0%B2%D1%96%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20HOKA%20%28%D0%B1/%D1%83%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFkEgXU_ffwtJHUFSII_g0x" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">37</div>
+            <div class="code-badge">1566</div>
+            <div class="article">LICO</div>
+            <div class="name">Черевики демісезон унісекс LICO сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">21 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ALICO%20%28%D0%BA%D0%BE%D0%B4%201566%29%0A%D0%A7%D0%B5%D1%80%D0%B5%D0%B2%D0%B8%D0%BA%D0%B8%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D1%83%D0%BD%D1%96%D1%81%D0%B5%D0%BA%D1%81%20LICO%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PLfUs9LNGmfZoaoqL6g9-qK8HlrhowPycw" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">38</div>
+            <div class="code-badge">1443</div>
+            <div class="article">Goliath</div>
+            <div class="name">Кросівки, кеди, сліпони чоловічі Goliath сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">20 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AGoliath%20%28%D0%BA%D0%BE%D0%B4%201443%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%2C%20%D0%BA%D0%B5%D0%B4%D0%B8%2C%20%D1%81%D0%BB%D1%96%D0%BF%D0%BE%D0%BD%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20Goliath%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pE9JHKubTcVHtD54fDxRiUx" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">39</div>
+            <div class="code-badge">1411</div>
+            <div class="article">Propet A</div>
+            <div class="name">Кросівки мікс літо+демісезон Propet сток США</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">19.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0APropet%20A%20%28%D0%BA%D0%BE%D0%B4%201411%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%2B%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Propet%20%D1%81%D1%82%D0%BE%D0%BA%20%D0%A1%D0%A8%D0%90%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGMW_qrZL75f3TGJrGTUVYj" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">40</div>
+            <div class="code-badge">1548</div>
+            <div class="article">TEVA B</div>
+            <div class="name">Кросівки, взуття мікс чоловічі, жіночі демісезон сток TEVA (примірка, нові, мін. дефект))</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">19 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ATEVA%20B%20%28%D0%BA%D0%BE%D0%B4%201548%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%2C%20%D0%B2%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%2C%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D1%81%D1%82%D0%BE%D0%BA%20TEVA%20%28%D0%BF%D1%80%D0%B8%D0%BC%D1%96%D1%80%D0%BA%D0%B0%2C%20%D0%BD%D0%BE%D0%B2%D1%96%2C%20%D0%BC%D1%96%D0%BD.%20%D0%B4%D0%B5%D1%84%D0%B5%D0%BA%D1%82%29%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHp3jY4Kuc0_VOSxzHl7Dde" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">41</div>
+            <div class="code-badge">1708</div>
+            <div class="article">SHOES CREAM S</div>
+            <div class="name">Взуття доросле та дитяче мікс літо Крем</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">16.2 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHOES%20CREAM%20S%20%28%D0%BA%D0%BE%D0%B4%201708%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%9A%D1%80%D0%B5%D0%BC%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFhuUKXkRwJBTepoSsds5yj" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">42</div>
+            <div class="code-badge">1506</div>
+            <div class="article">Hi-Tec JR</div>
+            <div class="name">Кросівки  дитячі Hi-Tec сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">16 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHi-Tec%20JR%20%28%D0%BA%D0%BE%D0%B4%201506%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D1%96%20Hi-Tec%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFwtBDAmsBV9eQV-anA__ui" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">43</div>
+            <div class="code-badge">1298</div>
+            <div class="article">OZARK TRAIL</div>
+            <div class="name">Взутття, кросівки трекове унісекс Зима сток OZARK TRAIL</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">16 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AOZARK%20TRAIL%20%28%D0%BA%D0%BE%D0%B4%201298%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%82%D1%8F%2C%20%D0%BA%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D1%82%D1%80%D0%B5%D0%BA%D0%BE%D0%B2%D0%B5%20%D1%83%D0%BD%D1%96%D1%81%D0%B5%D0%BA%D1%81%20%D0%97%D0%B8%D0%BC%D0%B0%20%D1%81%D1%82%D0%BE%D0%BA%20OZARK%20TRAIL%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFcDSKqjr6JGPhzYru5nMlA" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">44</div>
+            <div class="code-badge">1065</div>
+            <div class="article">Adidas Kids</div>
+            <div class="name">Кросівки дитячі літо Adidas Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">15 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AAdidas%20Kids%20%28%D0%BA%D0%BE%D0%B4%201065%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D1%96%20%D0%BB%D1%96%D1%82%D0%BE%20Adidas%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFO3iynxu8KHFevUud5WqXW" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">45</div>
+            <div class="code-badge">1323</div>
+            <div class="article">ASP</div>
+            <div class="name">Кросівки мікс доросле + дитяче Adidas|Reebok (б/в, ремонт)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">14.95 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AASP%20%28%D0%BA%D0%BE%D0%B4%201323%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%2B%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20Adidas%7CReebok%20%28%D0%B1/%D0%B2%2C%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFe-P9uZFE6-pff1TVPud5B" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">46</div>
+            <div class="code-badge">1658</div>
+            <div class="article">FBL - 3</div>
+            <div class="name">Взуття футбольне Adidas (ремонт)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">14.9 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AFBL%20-%203%20%28%D0%BA%D0%BE%D0%B4%201658%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D1%8C%D0%BD%D0%B5%20Adidas%20%28%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHd-hVd7LnFvzd26X7BhDKT" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">47</div>
+            <div class="code-badge">1489</div>
+            <div class="article">KANE</div>
+            <div class="name">Кросівки чоловічі та жіночі KANE сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">14.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AKANE%20%28%D0%BA%D0%BE%D0%B4%201489%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%D1%82%D0%B0%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20KANE%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pERpEKy1jnnWsLdOMLhEObE" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">48</div>
+            <div class="code-badge">0672</div>
+            <div class="article">L.MIX SHOES SUMMER G</div>
+            <div class="name">Взуття мікс літо  Livergy,Esmara,Tom Rose Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">13.9 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.MIX%20SHOES%20SUMMER%20G%20%28%D0%BA%D0%BE%D0%B4%200672%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%20%20Livergy%2CEsmara%2CTom%20Rose%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFwVLIPXn-Ru9FUM-RdQp5p" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">49</div>
+            <div class="code-badge">1125</div>
+            <div class="article">SHOES CREAM</div>
+            <div class="name">Взуття доросле та дитяче мікс демісезон Крем</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">13.9 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHOES%20CREAM%20%28%D0%BA%D0%BE%D0%B4%201125%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D0%9A%D1%80%D0%B5%D0%BC%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEeqiqSG9AMrbr54C1IEkgp" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">50</div>
+            <div class="code-badge">1554</div>
+            <div class="article">Lurchi Shoes</div>
+            <div class="name">Взуття дитяче мікс зима Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">13 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ALurchi%20Shoes%20%28%D0%BA%D0%BE%D0%B4%201554%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEqfYYJVHGYTF4uJJEIGKD0" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">51</div>
+            <div class="code-badge">1875</div>
+            <div class="article">Tred Safe</div>
+            <div class="name">Взуття мікс демісезон Tred Safe сток, Waterproof</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">13 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ATred%20Safe%20%28%D0%BA%D0%BE%D0%B4%201875%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Tred%20Safe%20%D1%81%D1%82%D0%BE%D0%BA%2C%20Waterproof%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">52</div>
+            <div class="code-badge">0585</div>
+            <div class="article">87103</div>
+            <div class="name">Сандалі жіночі та дитячі літо Екстра</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">12.6 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A87103%20%28%D0%BA%D0%BE%D0%B4%200585%29%0A%D0%A1%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB%D1%96%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D1%96%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%95%D0%BA%D1%81%D1%82%D1%80%D0%B0%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHKDPjjj5KHuwFUAXRfZBn9" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">53</div>
+            <div class="code-badge">1378</div>
+            <div class="article">(G) C&A SHOES</div>
+            <div class="name">Взуття мікс демісезон C&A сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">12.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A%28G%29%20C%26A%20SHOES%20%28%D0%BA%D0%BE%D0%B4%201378%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20C%26A%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHTW-nGYF6AFsDBRdhODRbi" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">54</div>
+            <div class="code-badge">0207</div>
+            <div class="article">89183</div>
+            <div class="name">Взуття жіноче літо Крем</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">11.8 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A89183%20%28%D0%BA%D0%BE%D0%B4%200207%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%9A%D1%80%D0%B5%D0%BC%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGwFF3lHOFpcvCc_-dCH_PV" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">55</div>
+            <div class="code-badge">1744</div>
+            <div class="article">CEL SHOES TT UK</div>
+            <div class="name">Взуття мікс чоловіче, жіноче, дитче демісезон Екстра+Крем Англія TT</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">10.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ACEL%20SHOES%20TT%20UK%20%28%D0%BA%D0%BE%D0%B4%201744%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B5%2C%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%2C%20%D0%B4%D0%B8%D1%82%D1%87%D0%B5%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D0%95%D0%BA%D1%81%D1%82%D1%80%D0%B0%2B%D0%9A%D1%80%D0%B5%D0%BC%20%D0%90%D0%BD%D0%B3%D0%BB%D1%96%D1%8F%20TT%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHMBW4K9M9icvBPvWeOFrlL" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">56</div>
+            <div class="code-badge">1386</div>
+            <div class="article">HOKA C-</div>
+            <div class="name">Кросівки мікс нові демісезон сток HOKA (б/у + ремонт)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">10.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHOKA%20C-%20%28%D0%BA%D0%BE%D0%B4%201386%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BD%D0%BE%D0%B2%D1%96%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D1%81%D1%82%D0%BE%D0%BA%20HOKA%20%28%D0%B1/%D1%83%20%2B%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEzVIsUDczhjpjp3DD2Midu" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">57</div>
+            <div class="code-badge">1663</div>
+            <div class="article">80213</div>
+            <div class="name">Взуття доросле та дитяче мікс літо Екстра+ 1 сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.65 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A80213%20%28%D0%BA%D0%BE%D0%B4%201663%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%95%D0%BA%D1%81%D1%82%D1%80%D0%B0%2B%201%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pF9IiMH6PCxm4NDYk82hY_s" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">58</div>
+            <div class="code-badge">0360</div>
+            <div class="article">89223</div>
+            <div class="name">Взуття жіноче зима Крем</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A89223%20%28%D0%BA%D0%BE%D0%B4%200360%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%20%D0%B7%D0%B8%D0%BC%D0%B0%20%D0%9A%D1%80%D0%B5%D0%BC%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pH6amGTIN3-PbA3sn23P7vG" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">59</div>
+            <div class="code-badge">1769</div>
+            <div class="article">Hey Dude C</div>
+            <div class="name">Взуття літо, мокасини чоловічі та жіночі Hey Dude сток, категорія C (плями, мін. дефекти)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHey%20Dude%20C%20%28%D0%BA%D0%BE%D0%B4%201769%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BB%D1%96%D1%82%D0%BE%2C%20%D0%BC%D0%BE%D0%BA%D0%B0%D1%81%D0%B8%D0%BD%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%D1%82%D0%B0%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20Hey%20Dude%20%D1%81%D1%82%D0%BE%D0%BA%2C%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D1%96%D1%8F%20C%20%28%D0%BF%D0%BB%D1%8F%D0%BC%D0%B8%2C%20%D0%BC%D1%96%D0%BD.%20%D0%B4%D0%B5%D1%84%D0%B5%D0%BA%D1%82%D0%B8%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFFrtCO4RvyrbpXevMkR2dE" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">60</div>
+            <div class="code-badge">1132</div>
+            <div class="article">Hummel Shoes CH</div>
+            <div class="name">Взуття дитяче ( кросівки, сандалі) мікс демісезон Hummel Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHummel%20Shoes%20CH%20%28%D0%BA%D0%BE%D0%B4%201132%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%28%20%D0%BA%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%2C%20%D1%81%D0%B0%D0%BD%D0%B4%D0%B0%D0%BB%D1%96%29%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Hummel%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFzpQpONikvDZZkvGaX5PuV" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">61</div>
+            <div class="code-badge">1783</div>
+            <div class="article">L.MIX CH SHOES W</div>
+            <div class="name">Взуття дитяче зима Lupilu</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.MIX%20CH%20SHOES%20W%20%28%D0%BA%D0%BE%D0%B4%201783%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%D0%B7%D0%B8%D0%BC%D0%B0%20Lupilu%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEHjKfMHRiPfXEcfeeoueuR" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">62</div>
+            <div class="code-badge">1649</div>
+            <div class="article">L.MIX SHOES SUMMER MIX</div>
+            <div class="name">Взуття мікс літо доросле та дитяче  Livergy,Esmara, Crane,Alive Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.MIX%20SHOES%20SUMMER%20MIX%20%28%D0%BA%D0%BE%D0%B4%201649%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%20Livergy%2CEsmara%2C%20Crane%2CAlive%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFW1oCKIx8hDtMWc2Aq7l2q" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">63</div>
+            <div class="code-badge">1712</div>
+            <div class="article">L.MIX SHOES перепак</div>
+            <div class="name">Взуття мікс демісезон Esmara, Livergy Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.MIX%20SHOES%20%D0%BF%D0%B5%D1%80%D0%B5%D0%BF%D0%B0%D0%BA%20%28%D0%BA%D0%BE%D0%B4%201712%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Esmara%2C%20Livergy%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">64</div>
+            <div class="code-badge">0209</div>
+            <div class="article">89211</div>
+            <div class="name">Взуття мікс (шльопанці, в'єтнамки, крокси) літо Екстра</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">8.9 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A89211%20%28%D0%BA%D0%BE%D0%B4%200209%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%28%D1%88%D0%BB%D1%8C%D0%BE%D0%BF%D0%B0%D0%BD%D1%86%D1%96%2C%20%D0%B2%27%D1%94%D1%82%D0%BD%D0%B0%D0%BC%D0%BA%D0%B8%2C%20%D0%BA%D1%80%D0%BE%D0%BA%D1%81%D0%B8%29%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%95%D0%BA%D1%81%D1%82%D1%80%D0%B0%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEsfrZw8GddVM4SyD5y5D7W" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">65</div>
+            <div class="code-badge">1487</div>
+            <div class="article">Clogs Mix</div>
+            <div class="name">Взуття мікс (шльопанці, в'єтнамки, крокси, сабо) рекламація літо нове</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">8.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AClogs%20Mix%20%28%D0%BA%D0%BE%D0%B4%201487%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%28%D1%88%D0%BB%D1%8C%D0%BE%D0%BF%D0%B0%D0%BD%D1%86%D1%96%2C%20%D0%B2%27%D1%94%D1%82%D0%BD%D0%B0%D0%BC%D0%BA%D0%B8%2C%20%D0%BA%D1%80%D0%BE%D0%BA%D1%81%D0%B8%2C%20%D1%81%D0%B0%D0%B1%D0%BE%29%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%B0%D1%86%D1%96%D1%8F%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%BD%D0%BE%D0%B2%D0%B5%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pERcg2B0nEBgsN0opwxyP1V" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">66</div>
+            <div class="code-badge">1195</div>
+            <div class="article">WORK SHOES EX</div>
+            <div class="name">Взуття робоче мікс демісезон Екстра</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">8.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AWORK%20SHOES%20EX%20%28%D0%BA%D0%BE%D0%B4%201195%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D0%95%D0%BA%D1%81%D1%82%D1%80%D0%B0%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEvlgfFwo5OvA1hr8j6W0Bq" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">67</div>
+            <div class="code-badge">0032</div>
+            <div class="article">13033</div>
+            <div class="name">Взуття мікс ( шльопанці, в'єтнамки, крокси) літо 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">6.95 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A13033%20%28%D0%BA%D0%BE%D0%B4%200032%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%28%20%D1%88%D0%BB%D1%8C%D0%BE%D0%BF%D0%B0%D0%BD%D1%86%D1%96%2C%20%D0%B2%27%D1%94%D1%82%D0%BD%D0%B0%D0%BC%D0%BA%D0%B8%2C%20%D0%BA%D1%80%D0%BE%D0%BA%D1%81%D0%B8%29%20%D0%BB%D1%96%D1%82%D0%BE%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFGQTEOfDbuk3hcd3_cACuK" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">68</div>
+            <div class="code-badge">1871</div>
+            <div class="article">Winter Shoes NO-1 SOBS</div>
+            <div class="name">Взуття жіноче та дитяче 1й сорт + Екстра без каблука зима Канада</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">6.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AWinter%20Shoes%20NO-1%20SOBS%20%28%D0%BA%D0%BE%D0%B4%201871%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%20%2B%20%D0%95%D0%BA%D1%81%D1%82%D1%80%D0%B0%20%D0%B1%D0%B5%D0%B7%20%D0%BA%D0%B0%D0%B1%D0%BB%D1%83%D0%BA%D0%B0%20%D0%B7%D0%B8%D0%BC%D0%B0%20%D0%9A%D0%B0%D0%BD%D0%B0%D0%B4%D0%B0%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGxIJgWHr1atCsvsF6L_acJ" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">69</div>
+            <div class="code-badge">1868</div>
+            <div class="article">Work Shoes  SOBS</div>
+            <div class="name">Взуття робоче мікс чоловіче+жіноче 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">6.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AWork%20Shoes%20%20SOBS%20%28%D0%BA%D0%BE%D0%B4%201868%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B5%2B%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGIuXKRtvpeFvasOFHAx3xt" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">70</div>
+            <div class="code-badge">0025</div>
+            <div class="article">13011</div>
+            <div class="name">Взуття робоче мікс демісезон 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">6.45 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A13011%20%28%D0%BA%D0%BE%D0%B4%200025%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pH49047wfpb4j10NyrbGPyf" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">71</div>
+            <div class="code-badge">1001</div>
+            <div class="article">HOUSE SLIPPERS</div>
+            <div class="name">Тапочки кімнатні мікс демісезон 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">5.6 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHOUSE%20SLIPPERS%20%28%D0%BA%D0%BE%D0%B4%201001%29%0A%D0%A2%D0%B0%D0%BF%D0%BE%D1%87%D0%BA%D0%B8%20%D0%BA%D1%96%D0%BC%D0%BD%D0%B0%D1%82%D0%BD%D1%96%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pE1IogoKOKKKZ6kwaE9PMIH" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">72</div>
+            <div class="code-badge">1396</div>
+            <div class="article">Hummel Flip AD</div>
+            <div class="name">Тапочки, шльопанці, вєтнамки дорослі сток Hummel</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">5.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHummel%20Flip%20AD%20%28%D0%BA%D0%BE%D0%B4%201396%29%0A%D0%A2%D0%B0%D0%BF%D0%BE%D1%87%D0%BA%D0%B8%2C%20%D1%88%D0%BB%D1%8C%D0%BE%D0%BF%D0%B0%D0%BD%D1%86%D1%96%2C%20%D0%B2%D1%94%D1%82%D0%BD%D0%B0%D0%BC%D0%BA%D0%B8%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D1%96%20%D1%81%D1%82%D0%BE%D0%BA%20Hummel%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pH51_HmSJyOyX5QVFTV1WZl" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">73</div>
+            <div class="code-badge">1869</div>
+            <div class="article">L.Fashion Shoes SOBS</div>
+            <div class="name">Взуття жіноче демісезон 1й сорт fashion Канада SOBS</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">5.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.Fashion%20Shoes%20SOBS%20%28%D0%BA%D0%BE%D0%B4%201869%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%20fashion%20%D0%9A%D0%B0%D0%BD%D0%B0%D0%B4%D0%B0%20SOBS%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFDnm6cxgwY4Y0-XTySlXz8" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">74</div>
+            <div class="code-badge">1559</div>
+            <div class="article">HOUSE SLIPPERS 20</div>
+            <div class="name">Тапочки домашні мікс дорослі+дитячі Екстра+1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHOUSE%20SLIPPERS%2020%20%28%D0%BA%D0%BE%D0%B4%201559%29%0A%D0%A2%D0%B0%D0%BF%D0%BE%D1%87%D0%BA%D0%B8%20%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BD%D1%96%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D1%96%2B%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D1%96%20%D0%95%D0%BA%D1%81%D1%82%D1%80%D0%B0%2B1%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFtE-R_GddmynL8hHRxAYoi" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">75</div>
+            <div class="code-badge">0697</div>
+            <div class="article">89713</div>
+            <div class="name">Взуття гумове утеплене мікс зима 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">4.8 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A89713%20%28%D0%BA%D0%BE%D0%B4%200697%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B3%D1%83%D0%BC%D0%BE%D0%B2%D0%B5%20%D1%83%D1%82%D0%B5%D0%BF%D0%BB%D0%B5%D0%BD%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEb8pGW31A2WZ4HSX31W2ue" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">76</div>
+            <div class="code-badge">1870</div>
+            <div class="article">Rubeer Shoes SOBS</div>
+            <div class="name">Взуття гумове жіноче 1й сорт Канада, SOBS</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">4.7 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ARubeer%20Shoes%20SOBS%20%28%D0%BA%D0%BE%D0%B4%201870%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B3%D1%83%D0%BC%D0%BE%D0%B2%D0%B5%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%20%D0%9A%D0%B0%D0%BD%D0%B0%D0%B4%D0%B0%2C%20SOBS%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pG5n_cdn1ZOJ7jsIePgqHsX" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">77</div>
+            <div class="code-badge">1467</div>
+            <div class="article">K I</div>
+            <div class="name">Кеди 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">4.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AK%20I%20%28%D0%BA%D0%BE%D0%B4%201467%29%0A%D0%9A%D0%B5%D0%B4%D0%B8%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHkgbc1cAfCwz1Wcg13gDFC" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">78</div>
+            <div class="code-badge">0969</div>
+            <div class="article">13013</div>
+            <div class="name">Взуття чоловіче Зима  2й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">4.2 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A13013%20%28%D0%BA%D0%BE%D0%B4%200969%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B5%20%D0%97%D0%B8%D0%BC%D0%B0%20%202%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pG4Zj24bHPZYYv5TFqV0-uW" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">79</div>
+            <div class="code-badge">1397</div>
+            <div class="article">Hummel Flip CH</div>
+            <div class="name">Тапочки, шльопанці, вєтнамки дитячі сток Hummel</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.9 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHummel%20Flip%20CH%20%28%D0%BA%D0%BE%D0%B4%201397%29%0A%D0%A2%D0%B0%D0%BF%D0%BE%D1%87%D0%BA%D0%B8%2C%20%D1%88%D0%BB%D1%8C%D0%BE%D0%BF%D0%B0%D0%BD%D1%86%D1%96%2C%20%D0%B2%D1%94%D1%82%D0%BD%D0%B0%D0%BC%D0%BA%D0%B8%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D1%96%20%D1%81%D1%82%D0%BE%D0%BA%20Hummel%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pH6SDMR1iIVDW15kLYiiMmX" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">80</div>
+            <div class="code-badge">1832</div>
+            <div class="article">SCARPE DONNA</div>
+            <div class="name">Взуття жіноче Зима, 1й сорт, Італія</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.9 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASCARPE%20DONNA%20%28%D0%BA%D0%BE%D0%B4%201832%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%20%D0%97%D0%B8%D0%BC%D0%B0%2C%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%2C%20%D0%86%D1%82%D0%B0%D0%BB%D1%96%D1%8F%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pF_S4vI_GIi0Op0zdEmBvZn" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">81</div>
+            <div class="code-badge">1662</div>
+            <div class="article">20503</div>
+            <div class="name">Взуття мікс літо 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.75 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A20503%20%28%D0%BA%D0%BE%D0%B4%201662%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pE12ZEasS26XdME24ed0cJI" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">82</div>
+            <div class="code-badge">1469</div>
+            <div class="article">(Y) WORK SHOES</div>
+            <div class="name">Взуття робоче мікс демісезон</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.7 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A%28Y%29%20WORK%20SHOES%20%28%D0%BA%D0%BE%D0%B4%201469%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">83</div>
+            <div class="code-badge">1206</div>
+            <div class="article">19521</div>
+            <div class="name">Взуття робоче мікс деімсезон 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.7 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A19521%20%28%D0%BA%D0%BE%D0%B4%201206%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D1%96%D0%BC%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFIZ-NjAl_oxZsqSRGMRp0l" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">84</div>
+            <div class="code-badge">1677</div>
+            <div class="article">SHOES MIX</div>
+            <div class="name">Взуття мікс демісезон 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.7 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHOES%20MIX%20%28%D0%BA%D0%BE%D0%B4%201677%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pG0f7z2VVxsNswOPUkYm3xK" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">85</div>
+            <div class="code-badge">1146</div>
+            <div class="article">13180</div>
+            <div class="name">Взуття доросле та дитяче мікс зима 1+2й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A13180%20%28%D0%BA%D0%BE%D0%B4%201146%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%201%2B2%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGegRvVGvrsH1gcMjFV1PZD" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">86</div>
+            <div class="code-badge">1821</div>
+            <div class="article">99703</div>
+            <div class="name">Взуття дитяче до 35 розміру зима 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A99703%20%28%D0%BA%D0%BE%D0%B4%201821%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%D0%B4%D0%BE%2035%20%D1%80%D0%BE%D0%B7%D0%BC%D1%96%D1%80%D1%83%20%D0%B7%D0%B8%D0%BC%D0%B0%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">87</div>
+            <div class="code-badge">1731</div>
+            <div class="article">HOKA D</div>
+            <div class="name">Кросівки мікс нові демісезон сток HOKA (б/у + ремонт задніка,ремонт верх)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHOKA%20D%20%28%D0%BA%D0%BE%D0%B4%201731%29%0A%D0%9A%D1%80%D0%BE%D1%81%D1%96%D0%B2%D0%BA%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BD%D0%BE%D0%B2%D1%96%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D1%81%D1%82%D0%BE%D0%BA%20HOKA%20%28%D0%B1/%D1%83%20%2B%20%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B7%D0%B0%D0%B4%D0%BD%D1%96%D0%BA%D0%B0%2C%D1%80%D0%B5%D0%BC%D0%BE%D0%BD%D1%82%20%D0%B2%D0%B5%D1%80%D1%85%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHszkNl7gtYvCj7kDPOOb6y" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">88</div>
+            <div class="code-badge">1819</div>
+            <div class="article">86293</div>
+            <div class="name">Взуття мікс зима Бельгія 1й+2й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.2 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A86293%20%28%D0%BA%D0%BE%D0%B4%201819%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B7%D0%B8%D0%BC%D0%B0%20%D0%91%D0%B5%D0%BB%D1%8C%D0%B3%D1%96%D1%8F%201%D0%B9%2B2%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pH4QGs5QpkGLduUs_45NTo3" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">89</div>
+            <div class="code-badge">0038</div>
+            <div class="article">13074</div>
+            <div class="name">Кеди мікс літо 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">3.1 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A13074%20%28%D0%BA%D0%BE%D0%B4%200038%29%0A%D0%9A%D0%B5%D0%B4%D0%B8%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGWCd8jHXECXLYTV6H6UvzU" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">90</div>
+            <div class="code-badge">0748</div>
+            <div class="article">SHOES MIX II</div>
+            <div class="name">Взуття мікс демісезон 2й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">2 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHOES%20MIX%20II%20%28%D0%BA%D0%BE%D0%B4%200748%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%202%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." target="_blank" class="order-btn">Замовити<br>огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGiQKkiSX6TUnsv5u2qdjPZ" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+    </div>
+    
+    <div class="footer">
+        <div class="footer-text">📱 Для замовлення звертайтесь</div>
+        <div class="contact">L-TEX | Луцьк, Україна | +380 67 671 0515</div>
+        <div class="footer-text" style="margin-top: 8px; font-size: 0.7em;">Актуально на 02.02.2026</div>
+    </div>
+</body>
+</html>
