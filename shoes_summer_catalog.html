@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👡 ВЗУТТЯ ЛІТО - L-TEX</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+            padding: 15px 10px;
+            line-height: 1.4;
+        }
+        
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #FF6B6B;
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+        
+        .header .info {
+            color: #666;
+            font-size: 0.85em;
+            margin-top: 8px;
+        }
+        
+        .header .company {
+            color: #FF6B6B;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        
+        .sale-banner {
+            background: linear-gradient(135deg, #ff4444 0%, #ff6b6b 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255,68,68,0.3);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .card.sale {
+            border: 2px solid #ff4444;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75em;
+            font-weight: 600;
+        }
+        
+        .code-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f0f0f0;
+            color: #FF6B6B;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+        
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 45px;
+            background: #ff4444;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.65em;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .article {
+            color: #FF6B6B;
+            font-weight: 700;
+            font-size: 1em;
+            margin-top: 35px;
+            margin-bottom: 6px;
+        }
+        
+        .name {
+            color: #333;
+            font-size: 0.8em;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .price-section {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .price-section.sale {
+            background: #fff5f5;
+            border: 2px solid #ff4444;
+        }
+        
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-info {
+            flex: 1;
+        }
+        
+        .price {
+            color: #FF6B6B;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+        
+        .old-price {
+            color: #999;
+            font-size: 0.95em;
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+        
+        .sale-price {
+            color: #ff4444;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+        
+        .price-label {
+            color: #666;
+            font-size: 0.7em;
+            margin-top: 2px;
+        }
+        
+        .order-btn {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            background: #7360F2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.75em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            line-height: 1.3;
+            min-width: 80px;
+        }
+        
+        .order-btn:hover {
+            background: #5C4BC4;
+            transform: scale(1.05);
+        }
+        
+        .youtube-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #FF0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .youtube-btn:hover {
+            background: #CC0000;
+            transform: scale(1.02);
+        }
+        
+        .youtube-btn:before {
+            content: "▶ ";
+        }
+        
+        .footer {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .footer-text {
+            color: #666;
+            font-size: 0.8em;
+            margin-bottom: 8px;
+        }
+        
+        .contact {
+            color: #FF6B6B;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 1.3em;
+            }
+            
+            .price-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .order-btn {
+                width: 100%;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>👡 ВЗУТТЯ ЛІТО</h1>
+        <div class="info">10 позицій | 6.95 - 36 €/кг | Загалом 4.5 тонн</div>
+        <div class="company">L-TEX | Луцьк, Україна 🇺🇦</div>
+    </div>
+    <div class="sale-banner">
+        🔥 АКЦІЙНА ПРОПОЗИЦІЯ! 🔥
+    </div>
+    
+    <div class="grid">
+        <div class="card sale">
+            <div class="card-number">1</div>
+            <div class="sale-badge">АКЦІЯ</div>
+            <div class="code-badge">1473</div>
+            <div class="article">PARKSIDE WORK SHOES</div>
+            <div class="name">Взуття робоче чоловіче PARKSIDE сток</div>
+            <div class="price-section sale">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="old-price">9.5 €/кг</div>
+                        <div class="sale-price">9 €/кг</div>
+                        <div class="price-label">Акційна ціна</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0APARKSIDE%20WORK%20SHOES%20%28%D0%BA%D0%BE%D0%B4%201473%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D1%80%D0%BE%D0%B1%D0%BE%D1%87%D0%B5%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D0%B5%20PARKSIDE%20%D1%81%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pH8ARDDwZrMuf0FUpFErzZP" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">2</div>
+            <div class="code-badge">0032</div>
+            <div class="article">13033</div>
+            <div class="name">Взуття мікс ( шльопанці, в'єтнамки, крокси) літо 1й сорт</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">6.95 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A13033%20%28%D0%BA%D0%BE%D0%B4%200032%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%28%20%D1%88%D0%BB%D1%8C%D0%BE%D0%BF%D0%B0%D0%BD%D1%86%D1%96%2C%20%D0%B2%27%D1%94%D1%82%D0%BD%D0%B0%D0%BC%D0%BA%D0%B8%2C%20%D0%BA%D1%80%D0%BE%D0%BA%D1%81%D0%B8%29%20%D0%BB%D1%96%D1%82%D0%BE%201%D0%B9%20%D1%81%D0%BE%D1%80%D1%82%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFGQTEOfDbuk3hcd3_cACuK" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">3</div>
+            <div class="code-badge">0207</div>
+            <div class="article">89183</div>
+            <div class="name">Взуття жіноче літо Крем</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">11.8 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0A89183%20%28%D0%BA%D0%BE%D0%B4%200207%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D0%B5%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%9A%D1%80%D0%B5%D0%BC%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGwFF3lHOFpcvCc_-dCH_PV" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">4</div>
+            <div class="code-badge">1694</div>
+            <div class="article">ECCO S</div>
+            <div class="name">Взуття мікс доросле літо сток ECCO</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">36 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AECCO%20S%20%28%D0%BA%D0%BE%D0%B4%201694%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BB%D1%96%D1%82%D0%BE%20%D1%81%D1%82%D0%BE%D0%BA%20ECCO%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHfarYxg1l6JNIJHQUfTcHY" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">5</div>
+            <div class="code-badge">1769</div>
+            <div class="article">Hey Dude C</div>
+            <div class="name">Взуття літо, мокасини чоловічі та жіночі Hey Dude сток, категорія C (плями, мін. дефекти)</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AHey%20Dude%20C%20%28%D0%BA%D0%BE%D0%B4%201769%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BB%D1%96%D1%82%D0%BE%2C%20%D0%BC%D0%BE%D0%BA%D0%B0%D1%81%D0%B8%D0%BD%D0%B8%20%D1%87%D0%BE%D0%BB%D0%BE%D0%B2%D1%96%D1%87%D1%96%20%D1%82%D0%B0%20%D0%B6%D1%96%D0%BD%D0%BE%D1%87%D1%96%20Hey%20Dude%20%D1%81%D1%82%D0%BE%D0%BA%2C%20%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D1%96%D1%8F%20C%20%28%D0%BF%D0%BB%D1%8F%D0%BC%D0%B8%2C%20%D0%BC%D1%96%D0%BD.%20%D0%B4%D0%B5%D1%84%D0%B5%D0%BA%D1%82%D0%B8%29%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFFrtCO4RvyrbpXevMkR2dE" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">6</div>
+            <div class="code-badge">0672</div>
+            <div class="article">L.MIX SHOES SUMMER G</div>
+            <div class="name">Взуття мікс літо  Livergy,Esmara,Tom Rose Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">13.9 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.MIX%20SHOES%20SUMMER%20G%20%28%D0%BA%D0%BE%D0%B4%200672%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%20%20Livergy%2CEsmara%2CTom%20Rose%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFwVLIPXn-Ru9FUM-RdQp5p" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">7</div>
+            <div class="code-badge">1649</div>
+            <div class="article">L.MIX SHOES SUMMER MIX</div>
+            <div class="name">Взуття мікс літо доросле та дитяче  Livergy,Esmara, Crane,Alive Сток</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">9.5 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0AL.MIX%20SHOES%20SUMMER%20MIX%20%28%D0%BA%D0%BE%D0%B4%201649%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%BB%D1%96%D1%82%D0%BE%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%20Livergy%2CEsmara%2C%20Crane%2CAlive%20%D0%A1%D1%82%D0%BE%D0%BA%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pFW1oCKIx8hDtMWc2Aq7l2q" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">8</div>
+            <div class="code-badge">1410</div>
+            <div class="article">SHMs</div>
+            <div class="name">Взуття мікс сток Gordon Bros. Digel літо</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">25 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHMs%20%28%D0%BA%D0%BE%D0%B4%201410%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D1%81%D1%82%D0%BE%D0%BA%20Gordon%20Bros.%20Digel%20%D0%BB%D1%96%D1%82%D0%BE%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pETOxIbM_ckmAtBFZ0vioj8" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">9</div>
+            <div class="code-badge">1125</div>
+            <div class="article">SHOES CREAM</div>
+            <div class="name">Взуття доросле та дитяче мікс демісезон Крем</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">13.9 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ASHOES%20CREAM%20%28%D0%BA%D0%BE%D0%B4%201125%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%B4%D0%BE%D1%80%D0%BE%D1%81%D0%BB%D0%B5%20%D1%82%D0%B0%20%D0%B4%D0%B8%D1%82%D1%8F%D1%87%D0%B5%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20%D0%9A%D1%80%D0%B5%D0%BC%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEeqiqSG9AMrbr54C1IEkgp" target="_blank" class="youtube-btn">Дивитись на YouTube</a>
+        </div>
+
+        <div class="card">
+            <div class="card-number">10</div>
+            <div class="code-badge">1875</div>
+            <div class="article">Tred Safe</div>
+            <div class="name">Взуття мікс демісезон Tred Safe сток, Waterproof</div>
+            <div class="price-section">
+                <div class="price-row">
+                    <div class="price-info">
+                        <div class="price">13 €/кг</div>
+                        <div class="price-label">Ціна продажу</div>
+                    </div>
+                    <a href="viber://chat?number=%2B380676710515&text=%D0%94%D0%BE%D0%B1%D1%80%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BD%D1%8F%21%20%D0%A6%D1%96%D0%BA%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D1%82%D0%BE%D0%B2%D0%B0%D1%80%3A%0A%0ATred%20Safe%20%28%D0%BA%D0%BE%D0%B4%201875%29%0A%D0%92%D0%B7%D1%83%D1%82%D1%82%D1%8F%20%D0%BC%D1%96%D0%BA%D1%81%20%D0%B4%D0%B5%D0%BC%D1%96%D1%81%D0%B5%D0%B7%D0%BE%D0%BD%20Tred%20Safe%20%D1%81%D1%82%D0%BE%D0%BA%2C%20Waterproof%0A%0A%D0%9F%D1%80%D0%BE%D1%88%D1%83%20%D0%BD%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8%20%D0%B2%D1%96%D0%B4%D0%B5%D0%BE%20%D0%BE%D0%B3%D0%BB%D1%8F%D0%B4." class="order-btn">📱 Замовити огляд</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="footer">
+        <div class="footer-text">📱 Для замовлення звертайтесь</div>
+        <div class="contact">L-TEX | Луцьк, Україна | +380 67 671 0515</div>
+        <div class="footer-text" style="margin-top: 8px; font-size: 0.7em;">Актуально на 02.02.2026</div>
+    </div>
+</body>
+</html>
