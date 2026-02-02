@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-TEX - Кросівки Сток</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            padding: 15px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 1.6em;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header p {
+            font-size: 0.9em;
+            opacity: 0.95;
+        }
+        
+        .products {
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        
+        .product-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 12px;
+            border-left: 4px solid #00d2ff;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .product-number {
+            background: #00d2ff;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        .product-code {
+            background: #3a7bd5;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.75em;
+        }
+        
+        .product-title {
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #2c3e50;
+            margin-bottom: 6px;
+        }
+        
+        .product-description {
+            color: #6c757d;
+            font-size: 0.75em;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .product-stock {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        
+        .product-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+        
+        .detail-item {
+            background: white;
+            padding: 6px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.75em;
+        }
+        
+        .detail-icon {
+            font-size: 1em;
+        }
+        
+        .detail-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .detail-value {
+            color: #00d2ff;
+            font-weight: bold;
+        }
+        
+        .promo-price {
+            color: #e74c3c !important;
+        }
+        
+        .youtube-link {
+            background: #FF0000;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.7em;
+        }
+        
+        .youtube-link:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+        
+        .no-youtube {
+            color: #6c757d;
+            font-size: 0.7em;
+            font-style: italic;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>👟 КРОСІВКИ СТОК L-TEX</h1>
+            <p>9 позицій преміум брендів • Усі товари в наявності</p>
+        </div>
+        
+        <div class="products">
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">1</div>
+                    <div class="product-code">Код: 1159</div>
+                </div>
+                <div class="product-title">Reebok</div>
+                <div class="product-description">Кросівки мікс демісезон Reebok Сток</div>
+                <div class="product-stock">📦 1767 кг (73 шт) - ВЕЛИКИЙ ЗАЛИШОК!</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">25.0 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGnFDwVPmHEev0ePlaGhcoY" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">2</div>
+                    <div class="product-code">Код: 1645</div>
+                </div>
+                <div class="product-title">POLO Ralph Lauren</div>
+                <div class="product-description">Кросівки чоловічі POLO Ralph Lauren сток</div>
+                <div class="product-stock">📦 792 кг (66 шт) - ВЕЛИКИЙ ЗАЛИШОК!</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">25.0 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEIrewNLi1s-Tt4h2_IfxLY" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">3</div>
+                    <div class="product-code">Код: 1836</div>
+                </div>
+                <div class="product-title">SP-M Mix</div>
+                <div class="product-description">Кросівки мікс демісезон Adidas, Gazelle, Campus Сток</div>
+                <div class="product-stock">📦 200 кг (10 шт)</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">32.0 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pEQZ1pd95w9mOTFpjmUNYYS" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">4</div>
+                    <div class="product-code">Код: 1874</div>
+                </div>
+                <div class="product-title">SPH-Mix С</div>
+                <div class="product-description">Кросівки мультибренд Addias, Nike, NB, Puma, Lacoste</div>
+                <div class="product-stock">📦 175 кг (7 шт)</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">24.0 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGRJ7XbVD7EXlxDLye7VKA-" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">5</div>
+                    <div class="product-code">Код: 1839</div>
+                </div>
+                <div class="product-title">New Balance B</div>
+                <div class="product-description">Кросівки чоловічі + жіночі New Balance B</div>
+                <div class="product-stock">📦 110 кг (6 шт)</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">34.0 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pERocBGQbf9Agdaqg_ccjTE" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">6</div>
+                    <div class="product-code">Код: 1646</div>
+                </div>
+                <div class="product-title">RL COURT 3001</div>
+                <div class="product-description">Кросівки чоловічі Ralph Lauren COURT 3001 сток ростовка</div>
+                <div class="product-stock">📦 48 кг (4 шт)</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">25.0 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGKE8flGF3p8OMxBW3w82-x" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">7</div>
+                    <div class="product-code">Код: 1489</div>
+                </div>
+                <div class="product-title">KANE</div>
+                <div class="product-description">Кросівки чоловічі та жіночі KANE сток</div>
+                <div class="product-stock">📦 40 кг (2 шт)</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">14.5 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pERpEKy1jnnWsLdOMLhEObE" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">8</div>
+                    <div class="product-code">Код: 1548</div>
+                </div>
+                <div class="product-title">TEVA B</div>
+                <div class="product-description">Кросівки, взуття мікс чоловічі, жіночі демісезон сток TEVA</div>
+                <div class="product-stock">📦 20 кг (1 шт)</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">19.0 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pHp3jY4Kuc0_VOSxzHl7Dde" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+
+            <div class="product-card">
+                <div class="product-header">
+                    <div class="product-number">9</div>
+                    <div class="product-code">Код: 1346</div>
+                </div>
+                <div class="product-title">GUESS</div>
+                <div class="product-description">Кросівки, сліпони базові чоловічі/жіночі демісезон сток GUESS</div>
+                <div class="product-stock">📦 15 кг (1 шт)</div>
+                <div class="product-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">💰</span>
+                        <span class="detail-label">Ціна:</span>
+                        <span class="detail-value">24.0 грн/кг</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🎯</span>
+                        <span class="detail-label">Акція:</span>
+                        <span class="detail-value">-</span>
+                    </div>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PL6gwWuwZT8pGbNYf_woP1CLCwPumtk0l1" class="youtube-link" target="_blank">
+                    📹 Переглянути на YouTube
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            ✅ Усі позиції в наявності та готові до відвантаження! 🚚
+        </div>
+    </div>
+</body>
+</html>
